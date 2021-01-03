@@ -1,4 +1,4 @@
-# TIK-TAK-TOE Server part(BackEnd):
+# TICK-TACK-TOE Server part(BackEnd):
 
 Basic requirements: 
 
