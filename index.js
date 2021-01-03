@@ -40,13 +40,11 @@ app.post("/items", (req, res) => {
 
 });
 
+app.use(express.static(__dirname + '/tik_tak'));
 
 
-//support parsing of application/x-www-form-urlencoded post data
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.get("/", (req, res) => {
-    res.send("We are now home");
+app.get('/',function(req, res){//get,put,post,delete
+    res.sendFile(__dirname + '/tik_tak/index.html');
 });
 
 
