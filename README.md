@@ -34,10 +34,10 @@ Testing:
 
 Ive used Mocha for backend testing.
 As the server part is simple, our test is based on simple method running on the server.
-The test is in test dirrectory.
+The test is in test directory.
 To run the test:
 
-1. Run mocha command from the root dirrectory
+1. Run mocha command from the root directory
 
 
 
