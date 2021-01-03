@@ -33,7 +33,7 @@ p.s ill try to fix the bug in the nearest future.
 Testing:
 
 Ive used Mocha for backend testing.
-As the server part is simple, our test is based on simple method running on the server.
+As the server part is simple, our test is based on simple function running on the server.
 The test is in test directory.
 To run the test:
 
