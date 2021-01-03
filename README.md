@@ -1,79 +1,46 @@
 # TIK-TAK-TOE Server part(BackEnd):
 
+Basic requirements: 
 
-Requirements
 
-Bits is built upon Fractal, a tool that enables the rapid development of components, templates and pages. Fractal uses a number of ES6 features, so this project requires Node.js v4.0+ to be installed locally. A global install of Gulp is also recommended.
-Installation
+* Two users play a game of tick-tack-toe on the same computer 
+* No real-time functionality is required 
+* Single session 
+* All actions are reported to the API, which saves them 
+* Action log is displayed underneath the game area, read from the API 
+* The game must resume completely if the browser is refreshed
+
 
 To get the project up and running, and view components in the browser, complete the following steps:
 
     Download and install Node: https://nodejs.org/
-    Clone this repo: git clone git@github.com:24ways/frontend.git (SSH) or git clone https://github.com/24ways/frontend.git (HTTPS)
-    [Optional] Install Gulp globally: npm install gulp -g
-    [Optional] Install Fractal globally: npm install fractal -g
+    Clone this repo: git clone https://github.com/west1155/tik_tak_back.git (HTTPS) and inside root to the folder tik_tak https://github.com/west1155/tik_tak_front.git (HTTPS)
     Install project dependancies: npm install
     Start the development environment: npm start
-    Open your browser and visit http://localhost:3000
+    Open your browser and visit http://localhost:1111
 
-Development
+Development:
 
-When developing components, you may want assets automatically compiled and the browser to refresh automatically. To do this, run the following task:
 
-    npm run dev
+* The project is been developed by requirement excluding the last part (The game must resume completely if the browser is refreshed). 
+By developing the last part i was using an array to store the location and player, which is based on the server and UI connects to it through the API.
+Every time we start the game the initialisation should be proceesed from the server. Ive got fetch method which returns an array, but when the data is back, it is represented different way. 
+If it would be java, the problem would be solved by making a static array.
+p.s ill try to fix the bug in the nearest future.
 
-Creating a static build
 
-To create a static instance of this project, run the following task:
 
-    npm run build
+Testing:
 
-This will create a folder called www, into which the required files will be created.
-Deployment
+Ive used Mocha for backend testing.
+As the server part is simple, our test is based on simple method running on the server.
+The test is in test dirrectory.
+To run the test:
 
-To make this project publicly accessible, you can deploy a static instance by running the following task:
+1. Run mocha command from the root dirrectory
 
-    npm run publish
 
-This will publish the contents of public to your gh-pages branch.
-Repo structure
 
-Sometimes it’s helpful to know what all these different files are for…
 
-/
-├─ src/
-│  ├─ assets/        # Assets
-│  │  ├─ icons/      # Favicon and home screen icons
-│  │  ├─ images/     # Raster images (used in component examples)
-│  │  ├─ scripts/    # JavaScript files
-│  │  ├─ styles/     # CSS files
-│  │  └─ vectors/    # SVG images, icons and logos
-│  │
-│  ├─ components/    # Components
-│  │  ├─ _partials/  # …that render component previews
-│  │  ├─ common/     # …that may appear anywhere
-│  │  ├─ global/     # …that appear on every page
-│  │  ├─ layouts/    # …that govern macro layout
-│  │  ├─ scopes/     # …that style undecorated markup
-│  │  ├─ templates/  # …that combine components to render page types
-│  │  └─ utilities/  # …that have a single purpose/role
-│  │
-│  ├─ docs/          # Documentation
-│  │  ├─ _partials/  # Partials for rendering documentation
-│  │  └─ …           # Documentation files
-│  │
-│  └─ tokens/        # Design tokens
-│
-├─ tmp/              # Files required for dynamic builds (ignored by Git)
-├─ www/              # Public build (ignored by Git)
-│
-├─ .editorconfig     # Code style definitions
-├─ .gitignore        # List of files and folders not tracked by Git
-├─ .eslintrc         # Linting preferences for JavasScript
-├─ fractal.configjs  # Configuration for Fractal
-├─ gulpfile.js       # Configuration for Gulp tasks
-├─ LICENSE           # License information for this project
-├─ package.json      # Project manifest
-└─ README.md         # This file
 
- 
+
