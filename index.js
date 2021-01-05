@@ -56,3 +56,5 @@ app.get("/posts", (req, res) => {
 
 
 app.listen(1111, () => console.log("Server running"));
+
+module.exports = app;
