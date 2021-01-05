@@ -1,34 +1,20 @@
-"use strict";
-var data = [];
+var supertest = require('supertest');
+var chai = require('chai');
+var app = require('../index.js');global.app = app;
 
-describe( "An array test on the server", () => {
-    before( () => {
-        console.log( "before executes once before all tests" );
-    } );
+global.expect = chai.expect;
+global.request = supertest(app);
 
-    after( () => {
-        console.log( "after executes once after all tests" );
-    } );
 
-    describe( "sending", () => {
-        beforeEach( () => {
-            console.log( "beforeEach executes before every test" );
-        } );
-        it( "lets push an item to array", () => {
-            data.push("Privet")
-        } );
-
-        it( "Should return Hi from the array", () => {
-            data.pop();
-        } );
-    } );
-
-    describe( "error", () => {
-        it( "should return an error", () => {
-            assert.throws( data.push, {
-                name: "Error",
-                message: "it blowed up"
-            } );
-        } );
-    } );
-} );
+describe('Task API Routes', function() {
+    describe('GET /items', function() {
+        it('returns a list of items', function(done) {
+            request.get('/items')
+                .expect(200)
+                .end(function(err, res) {
+                    expect(res.body).to.have.lengthOf(0);
+                    done(err);
+                });
+        });
+    });
+});
